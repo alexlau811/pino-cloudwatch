@@ -3,7 +3,7 @@ var StdoutStream = require('./lib/stdout-stream');
 var ThrottleStream = require('./lib/throttle-stream');
 var CloudWatchStream = require('./lib/cloudwatch-stream');
 
-module.exports = function (options, errorHandler) {
+const fn = function (options, errorHandler) {
   options = options || {};
   options.ignoreEmpty = true;
 
@@ -27,3 +27,6 @@ module.exports = function (options, errorHandler) {
 
   return stdout;
 };
+
+module.exports = fn;
+module.exports.default = fn;
