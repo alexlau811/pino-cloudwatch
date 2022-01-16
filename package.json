@@ -20,9 +20,13 @@
   "author": "David Howell (david@dynamicmethods.com.au)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dbhowell/pino-cloudwatch/issues"
+    "url": "https://github.com/apalchys/pino-cloudwatch/issues"
   },
-  "homepage": "https://github.com/dbhowell/pino-cloudwatch#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:apalchys/pino-cloudwatch.git"
+  },
+  "homepage": "https://github.com/apalchys/pino-cloudwatch#readme",
   "dependencies": {
     "async": "^3.2.3",
     "aws-sdk": "^2.1058.0",
