@@ -1,14 +1,14 @@
 import { Writable, WritableOptions } from "stream";
 
 interface Options extends WritableOptions {
-  ignoreEmpty: boolean;
+  ignoreEmpty?: boolean;
   prefix?: string;
   stream?: string;
   interval?: number;
   aws_access_key_id?: string;
   aws_secret_access_key?: string;
   aws_region?: string;
-  group?: string;
+  group: string;
 }
 
 declare class CloudWatchStream extends Writable {
@@ -27,7 +27,7 @@ declare class CloudWatchStream extends Writable {
 
 declare function CloudWatchStreamFunc(
   options: Options,
-  errorHandler: () => void
+  errorHandler?: (err: Error) => void
 ): CloudWatchStream;
 
 export = CloudWatchStreamFunc;
