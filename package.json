@@ -1,8 +1,9 @@
 {
   "name": "@apalchys/pino-cloudwatch",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "CloudWatch Logs transport for pino",
   "main": "index.js",
+  "types": "index.d.ts",
   "bin": {
     "pino-cloudwatch": "bin/pino-cloudwatch.js"
   },
