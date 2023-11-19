@@ -25,9 +25,6 @@ declare class CloudWatchStream extends Writable {
   _write(chunks: any, encoding: any, callback: any): void;
 }
 
-declare function CloudWatchStreamFunc(
-  options: Options,
-  errorHandler?: (err: Error) => void
-): CloudWatchStream;
+declare function CloudWatchStreamFunc(options: Options, errorHandler?: (err: Error) => void): CloudWatchStream;
 
 export = CloudWatchStreamFunc;

@@ -1,8 +1,8 @@
-require('chai').should();
+require("chai").should();
 
-describe('max-length', function () {
-  it('should return false when below MAX_LENGTH (10000)', function () {
-    var maxLength = require('../../lib/max-length');
+describe("max-length", function () {
+  it("should return false when below MAX_LENGTH (10000)", function () {
+    var maxLength = require("../../lib/max-length");
     var newChunk = {};
     var chunks = [];
     var result = maxLength(chunks, newChunk);
@@ -10,8 +10,8 @@ describe('max-length', function () {
     result.should.be.false;
   });
 
-  it('should return true when equal MAX_LENGTH (10000)', function () {
-    var maxLength = require('../../lib/max-length');
+  it("should return true when equal MAX_LENGTH (10000)", function () {
+    var maxLength = require("../../lib/max-length");
     var newChunk = {};
     var chunks = [];
 

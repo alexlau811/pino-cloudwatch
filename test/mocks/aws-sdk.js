@@ -1,5 +1,15 @@
-var CloudWatchLogs = require('./cloudwatch-logs');
+const CloudWatchLogsClient = require("./cloudwatch-logs");
+const {
+  CreateLogStreamCommand,
+  PutLogEventsCommand,
+  DescribeLogStreamsCommand,
+  CreateLogGroupCommand,
+} = require("@aws-sdk/client-cloudwatch-logs");
 
 module.exports = {
-  CloudWatchLogs: CloudWatchLogs
+  CloudWatchLogsClient,
+  CreateLogStreamCommand,
+  PutLogEventsCommand,
+  DescribeLogStreamsCommand,
+  CreateLogGroupCommand,
 };
