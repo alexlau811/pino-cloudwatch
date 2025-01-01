@@ -1,7 +1,7 @@
 {
-  "name": "@apalchys/pino-cloudwatch",
-  "version": "0.9.0",
-  "description": "CloudWatch Logs transport for pino",
+  "name": "@alexlau811/pino-cloudwatch",
+  "version": "0.10.0",
+  "description": "Forked Pino CloudWatch Logs transport with a pino v7+ transport wrapper",
   "main": "index.js",
   "types": "index.d.ts",
   "bin": {
@@ -21,13 +21,13 @@
   "author": "David Howell (david@dynamicmethods.com.au)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/apalchys/pino-cloudwatch/issues"
+    "url": "https://github.com/alexlau811/pino-cloudwatch/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:apalchys/pino-cloudwatch.git"
+    "url": "git@github.com:alexlau811/pino-cloudwatch.git"
   },
-  "homepage": "https://github.com/apalchys/pino-cloudwatch#readme",
+  "homepage": "https://github.com/alexlau811/pino-cloudwatch#readme",
   "dependencies": {
     "@aws-sdk/client-cloudwatch-logs": "^3",
     "async": "^3.2.3",
