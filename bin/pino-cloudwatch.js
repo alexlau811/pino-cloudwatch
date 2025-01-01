@@ -17,4 +17,4 @@ var argv = yargs
   .default("interval", 1000)
   .default("stdout", false).argv;
 
-module.exports = pump(process.stdin, split(), require("../index")(argv));
+module.exports = pump(process.stdin, split(), require("../index").factory(argv));

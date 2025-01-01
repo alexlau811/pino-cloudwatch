@@ -1,6 +1,6 @@
 var mockRequire = require("mock-require");
 mockRequire("aws-sdk", require("../mocks/aws-sdk"));
-var index = require("../../index");
+var { factory } = require("../../index");
 var fs = require("fs");
 var path = require("path");
 
@@ -10,7 +10,7 @@ describe("pino-cloudwatch", function () {
     var pump = require("pump");
     var split = require("split2");
 
-    pump(inStream, split(), index({ group: "test" }), function (err) {
+    pump(inStream, split(), factory({ group: "test" }), function (err) {
       done(err);
     });
   });
@@ -20,7 +20,7 @@ describe("pino-cloudwatch", function () {
     var pump = require("pump");
     var split = require("split2");
 
-    pump(inStream, split(), index({ group: "test" }), function (err) {
+    pump(inStream, split(), factory({ group: "test" }), function (err) {
       done(err);
     });
   });
@@ -29,7 +29,7 @@ describe("pino-cloudwatch", function () {
     var inStream = fs.createReadStream(path.resolve(__dirname, "../mocks/log_single.txt"));
     var pump = require("pump");
     var split = require("split2");
-    var pinoCloudwatch = index({ group: "test" });
+    var pinoCloudwatch = factory({ group: "test" });
 
     pinoCloudwatch.on("flushed", function () {
       done();

@@ -1,9 +1,10 @@
+var build = require('pino-abstract-transport')
 var ChunkyStream = require("chunky-stream");
 var StdoutStream = require("./lib/stdout-stream");
 var ThrottleStream = require("./lib/throttle-stream");
 var CloudWatchStream = require("./lib/cloudwatch-stream");
 
-const fn = function (options, errorHandler) {
+var factory = function (options, errorHandler) {
   options = options || {};
   options.ignoreEmpty = true;
 
@@ -28,5 +29,22 @@ const fn = function (options, errorHandler) {
   return stdout;
 };
 
-module.exports = fn;
-module.exports.default = fn;
+module.exports = module.exports.default = function(options) {
+  var cloudwatch = factory({
+    interval: 1000,
+    stdout: false,
+    ...options
+  });
+
+  return build(async function (source) {
+    return source.pipe(cloudwatch);
+  }, {
+    enablePipelining: true,
+    parse: "lines",
+    close: function() {
+      cloudwatch.close();
+    }
+  });
+}
+
+module.exports.factory = factory;
