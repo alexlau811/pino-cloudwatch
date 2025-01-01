@@ -20,6 +20,33 @@ The log group name is specified via the CLI (`--prefix`) and the log stream name
 
 ## Usage
 
+V7 Transport API:
+
+```javascript
+import pino from 'pino';
+
+const transport = pino.transport({
+  targets: [{
+    target: 'pino-cloudwatch',
+    options: {
+      group: process.env.CLOUDWATCH_LOG_GROUP,
+      aws_region: process.env.AWS_REGION,
+      aws_access_key_id: process.env.AWS_ACCESS_KEY_ID,
+      aws_secret_access_key: process.env.AWS_SECRET_ACCESS_KEY,
+    }
+  }, {
+    target: 'pino-pretty',
+    options: {
+      colorize: true
+    }
+  }]
+})
+
+export const logger = pino(transport);
+```
+
+Legacy:
+
 ```
 # ./bin/pino-cloudwatch.js
 Sends pino logs to AWS CloudWatch Logs.
@@ -31,6 +58,7 @@ Options:
   --aws_access_key_id      AWS Access Key ID
   --aws_secret_access_key  AWS Secret Access Key
   --aws_region             AWS Region
+  --aws_profile            AWS Profile
   --group                  AWS CloudWatch log group name              [required]
   --prefix                 AWS CloudWatch log stream name prefix
   --stream                 AWS CloudWatch log stream name, overrides --prefix option.

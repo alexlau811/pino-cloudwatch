@@ -8,6 +8,7 @@ var argv = yargs
   .describe("aws_access_key_id", "AWS Access Key ID")
   .describe("aws_secret_access_key", "AWS Secret Access Key")
   .describe("aws_region", "AWS Region")
+  .describe("aws_profile", "AWS Profile")
   .describe("group", "AWS CloudWatch log group name")
   .describe("prefix", "AWS CloudWatch log stream name prefix")
   .describe("stream", "AWS CloudWatch log stream name, overrides --prefix option")

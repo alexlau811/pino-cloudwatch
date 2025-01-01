@@ -11,6 +11,7 @@ interface CloudWatchOptions extends WritableOptions {
   aws_access_key_id?: string;
   aws_secret_access_key?: string;
   aws_region?: string;
+  aws_profile?: string;
   group: string;
 }
 
