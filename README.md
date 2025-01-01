@@ -27,7 +27,7 @@ import pino from 'pino';
 
 const transport = pino.transport({
   targets: [{
-    target: 'pino-cloudwatch',
+    target: '@alexlau811/pino-cloudwatch',
     options: {
       group: process.env.CLOUDWATCH_LOG_GROUP,
       aws_region: process.env.AWS_REGION,
